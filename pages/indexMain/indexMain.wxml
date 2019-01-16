@@ -1,0 +1,102 @@
+<view class="main">
+  <view class='mainContent'>
+    <view class='weui-cells__title'>请输入以下参数</view>
+    <view class='weui-cells weui-cells_after-title'>
+      <view class='weui-cell weui-cell_input'>
+        <view class="weui-cell__hd">
+          <view class="weui-label">投资金额</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="digit" bindinput="inputFn" data-name="amount" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>元</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">年化利率</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="digit" bindinput="inputFn" data-name="falseRate" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>%</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">投入时长</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="digit" bindinput="inputFn" data-name="dateLong" />
+        </view>
+        <view class="weui-cell__ft" bindtap="selectDateType">
+          <text>{{dayType}}</text>
+          <text class="leo-right-jiantou"></text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">损耗天数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="digit" placeholder="各种不生息的等待期" bindinput="inputFn" data-name="xxday" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>天</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">损耗金额</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="digit" placeholder="手续、管理、提现费" bindinput="inputFn" data-name="xxmoney" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+      <!-- 计算结果 -->
+    <view class="page__bd" hidden="{{amount == 0 || dateLong == 0 || falseRate == 0}}">
+        <view class="weui-cells__title">计算结果</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">预期年化收益率</view>
+                <view class="weui-cell__ft">{{falseRate}} %</view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">真实年化收益率</view>
+                <view class="weui-cell__ft">{{trueRate}} %</view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">预期收益</view>
+                <view class="weui-cell__ft">{{falseIncome}} 元</view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">真实收益</view>
+                <view class="weui-cell__ft">{{trueIncome}} 元</view>
+            </view>
+        </view>
+    </view>
+</view>

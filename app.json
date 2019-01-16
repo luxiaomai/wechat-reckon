@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/indexMain/indexMain",
+    "pages/index/index"
+  ],
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/indexMain/indexMain",
+      "text": "计算器",
+      "iconPath": "images/ico.png",
+      "selectedIconPath": "images/ico-1.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "关于我",
+      "iconPath": "images/ico1.png",
+      "selectedIconPath": "images/ico1-1.png"
+    }]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
